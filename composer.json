@@ -1,0 +1,32 @@
+{
+  "name": "iredds/psr-15-example",
+  "description": "An example implementation of PSR-15.",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "iRedds"
+    }
+  ],
+  "require": {
+    "php" : "7.4",
+    "psr/http-server-handler": "*",
+    "psr/http-server-middleware": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dev\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Dev\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test" : "vendor/bin/phpunit --no-cover"
+  }
+}
