@@ -14,7 +14,7 @@ class RequestHandler implements RequestHandlerInterface
     protected array $handler;
     /**
      * @param MiddlewareInterface[] $middlewares
-     * @param array $handler
+     * @param array                 $handler // [Controller::class, 'method']
      */
     public function __construct(array $middlewares, array $handler)
     {
@@ -30,6 +30,7 @@ class RequestHandler implements RequestHandlerInterface
             return $middleware->process($request, $this);
         } else {
             [$controller, $method] = $this->handler;
+
             return (new $controller)->$method();
         }
     }
